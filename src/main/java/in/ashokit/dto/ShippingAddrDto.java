@@ -12,4 +12,6 @@ public class ShippingAddrDto {
     private String state;
     private String zipCode;
     private String addrType;
+    private String deleteSw;//specify wheather address is deleted or not
+    //private Integer customerId;
 }
