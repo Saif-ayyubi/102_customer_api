@@ -1,5 +1,4 @@
 package in.ashokit.rest;
-
 import in.ashokit.dto.CustomerDto;
 import in.ashokit.dto.ResetPwdDto;
 import in.ashokit.response.ApiResponse;
@@ -52,8 +51,6 @@ public class CustomerRestController {
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
     }
-
-
     @PostMapping("/reset-pwd")
     public ResponseEntity<ApiResponse<String>> resetPwd(@RequestBody ResetPwdDto resetPwdDto){
         ApiResponse<String> response = new ApiResponse<>();
