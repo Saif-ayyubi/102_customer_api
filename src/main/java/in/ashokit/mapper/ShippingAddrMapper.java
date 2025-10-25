@@ -12,8 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ShippingAddrMapper {
 
-        @Autowired
-        public static ModelMapper mapper;
+        private static ModelMapper mapper = new ModelMapper();
 
         public static ShippingAddrDto convertToDto(ShippingAddressEntity addrEntity){
             return mapper.map(addrEntity, ShippingAddrDto.class);

@@ -9,8 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomerMapper {
 
-    @Autowired
-    private static ModelMapper mapper;
+    private static ModelMapper mapper = new ModelMapper();
 
     public static CustomerDto convertToDto(CustomerEntity customerEntity){
         return mapper.map(customerEntity, CustomerDto.class);

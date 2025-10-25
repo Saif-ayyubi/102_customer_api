@@ -30,8 +30,8 @@ public class CustomerServiceImpl implements CustomerService{
         customerEntity.setPwdUpdated("NO");
         CustomerEntity savedCustomer = customerRepo.save(customerEntity);
 
-        String subject = "";
-        String body ="";// will take body from file
+        String subject = "Your Account Created";
+        String body ="Your Temporary Pwd To Login: "+tempPwd;// will take body from file
 
         boolean status = emailService.sendEmail(subject, body, customerDto.getEmail());
 
@@ -46,7 +46,7 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public CustomerDto login(String email, String pwd) {
 
-        CustomerEntity customerEntity = customerRepo.findByEmailAndPwd(email, pwd);
+        CustomerEntity customerEntity = customerRepo.findByEmailAndPassword(email, pwd);
         if(customerEntity != null){
             return CustomerMapper.convertToDto(customerEntity);
         }
